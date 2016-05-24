@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Untitled</title>
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <!-- sample angular code -->
+    <div class="container">
+      <div ng-controller="myController">
+
+        <!-- Nav -->
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">
+                <p>{{company}}</p>
+              </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Link</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Time Line -->
+        <div class="row">
+          <div class="col-md-12">
+            <ol>
+              <li>
+                2015
+                <span class="details">
+                  Description of point 1
+                </span>
+              </li>
+              <li>
+                2016
+                <span class="details">
+                  Energy of 2016  
+                </span>
+              </li>
+              <li>
+                Fuck Dan
+                <span class="details">
+                  Here's your fucking timeline, dick.
+                </span>
+              </li>
+              <li>
+                Fuck Dan
+                <span class="details">
+                  Here's your fucking timeline, dick.
+                </span>
+              </li>
+              <li>
+                Fuck Dan
+                <span class="details">
+                  Here's your fucking timeline, dick.
+                </span>
+              </li>
+              <li>
+                Fuck Dan
+                <span class="details">
+                  Here's your fucking timeline, dick.
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="row">
+          <div class="col-md-4 center">
+            <label for="years">Years of Production: </label>
+            <select id="years" class="years">
+              <option>2000-2005</option>
+              <option>2006-2010</option>
+              <option selected>2011-2016</option>
+            </select>
+          </div>
+          <div class="col-md-4 center">
+            <label for="energyType">Energy Type: </label>
+            <select id="energyType" class="energyType">
+              <option selected>Coal</option>
+              <option>Natural Gas</option>
+              <option>Nuclear</option>
+              <option>Renewables</option>
+              <option>Petroleum</option>
+            </select>
+          </div>
+          <div class="col-md-4 center">
+            <label for="chartType">Data Chart: </label>
+              <select id="chartType" class="chartType">
+                <option selected>U.S. Map</option>
+                <option>Table</option>                
+              </select>
+          </div>
+        </div>
+
+
+        
+      <!-- end controller -->
+      </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
