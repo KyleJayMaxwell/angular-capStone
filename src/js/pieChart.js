@@ -1,47 +1,47 @@
-var width = 300 ,
-  height = 350,
-  radius = Math.min(width, height) / 2;
+var wid = 150 ,
+  hei = 150,
+  radius = Math.min(wid, hei) / 2;
 
 var color = d3.scale.ordinal()
     .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
-var arc = d3.svg.arc()
+var arch = d3.svg.arc()
     .outerRadius(radius - 10)
     .innerRadius(0);
 
-var labelArc = d3.svg.arc()
+var label = d3.svg.arc()
     .outerRadius(radius - 40)
     .innerRadius(radius - 40);
 
-var pie = d3.layout.pie()
+var pie1 = d3.layout.pie()
     .sort(null)
-    .value(function(d) { return d.percentage; });
+    .value(function(dano) { return dano.percentage; });
 
-var svg = d3.select("#chart").append("svg")
-    .attr("width", width)
-    .attr("height", height)
+var savage = d3.select("#chart").append("svg")
+    .attr("width", wid)
+    .attr("height", hei)
     .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    .attr("transform", "translate(" + wid / 2 + "," + hei / 2 + ")");
 
 d3.csv("data.csv", type, function(error, data) {
   if (error) throw error;
 
-  var g = svg.selectAll(".arc")
-      .data(pie(data))
+  var gq = savage.selectAll(".arc")
+      .data(pie1(data))
     .enter().append("g")
       .attr("class", "arc");
 
-  g.append("path")
-      .attr("d", arc)
-      .style("fill", function(d) { return color(d.data.energy); });
+  gq.append("path")
+      .attr("d", arch)
+      .style("fill", function(dano) { return color(dano.data.energy); });
 
-  g.append("text")
-      .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
+  gq.append("text")
+      .attr("transform", function(dano) { return "translate(" + label.centroid(dano) + ")"; })
       .attr("dy", ".35em")
-      .text(function(d) { return d.data.energy; });
+      .text(function(dano) { return dano.data.energy; });
 });
 
-function type(d) {
-  d.percentage = +d.percentage;
-  return d;
+function type(dano) {
+  dano.percentage = +dano.percentage;
+  return dano;
 }

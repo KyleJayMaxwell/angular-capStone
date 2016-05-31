@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/timeline.css">
     <link rel="stylesheet" type="text/css" href="css/pieChart.css">
-        <link rel="stylesheet" type="text/css" href="css/usMap.css">  
+    <link rel="stylesheet" type="text/css" href="css/usMap.css">  
     </head>
   <body>
     <!-- sample angular code -->
@@ -77,6 +77,10 @@
         <!-- Filters -->
         <div class="row">
           <div class="col-md-4 center">
+            <label for="years">Years of Production: </label>
+            <div id="selectors"></div>
+          </div>
+          <div class="col-md-4 center">
             <label for="energyType">Energy Type: </label>
             <select id="energyType" class="energyType">
               <option selected>Coal</option>
@@ -93,21 +97,22 @@
                 <option>Table</option>                
               </select>
           </div>
-          <div class="col-md-4 center">
-            <label for="years">Years of Production: </label>
-            <div id="selectors"></div>
-          </div>
         </div>
 
         <div class="row">
-          <div class="col-md-4">
-            <div class="chart" id="chart"></div>
-          </div>
-          <div class="col-md-8">
+          <div class="col-md-8 center">
 
             <div id="tooltip-container"></div>
 
             <div id="canvas-svg"></div>
+          </div>
+          <div class="col-md-4">
+            <div class="chart center" id="chart">
+              <legend>Energy Production in USA: </legend>
+            </div>
+            <div class="colorado center" id="colorado">
+              <legend>Energy Production in CO: </legend>
+            </div>
           </div>
         </div>
 
@@ -127,6 +132,7 @@
 <script type="text/javascript" src="js/usMap.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/pieChart.js"></script>
+    <script type="text/javascript" src="js/pieChart.js"></script>   
+    <script type="text/javascript" src="js/colorado.js"></script>
   </body>
 </html>
