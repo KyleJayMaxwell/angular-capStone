@@ -3,7 +3,7 @@ d3.csv("population.csv", function(err, data) {
 
   var config = {"color1":"#d3e5ff","color2":"#08306B","stateDataColumn":"state_or_territory","defaultValue":"census_population_april_1_2010_number","state":"state_or_territory"};
   
-  var WIDTH = 600, HEIGHT = 500;
+  var WIDTH = 600 , HEIGHT = 450;
 
   var COLOR_COUNTS = 9;
   
