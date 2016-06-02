@@ -159,7 +159,11 @@ d3.csv("population.csv", function(err, data) {
             }
           })
           .attr("d", path)
-          .on("mousemove", function(d) {
+          .on("click", function(d) {
+            console.log(id_name_map[d.id]);
+            $('.stateName').html(id_name_map[d.id]);
+
+
               var html = "";
     
               html += "<div class=\"tooltip_kv\">";

@@ -1,47 +1,36 @@
-var wid = 150 ,
-  hei = 150,
-  radius = Math.min(wid, hei) / 2;
+var w = 150;
+var h = 150;
+var r = h/2;
+var color = d3.scale.category20c();
 
-var color = d3.scale.ordinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+var data = [{"label":"Category A", "value":20}, 
+              {"label":"Category B", "value":30}, 
+              {"label":"Category C", "value":30},
+              {"label":"It's Lit Dan", "value":20}];
 
-var arch = d3.svg.arc()
-    .outerRadius(radius - 10)
-    .innerRadius(0);
 
-var label = d3.svg.arc()
-    .outerRadius(radius - 40)
-    .innerRadius(radius - 40);
+var vis = d3.select('#chart').append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+var pie = d3.layout.pie().value(function(d){return d.value;});
 
-var pie1 = d3.layout.pie()
-    .sort(null)
-    .value(function(dano) { return dano.percentage; });
+// declare an arc generator function
+var arc = d3.svg.arc().outerRadius(r);
 
-var savage = d3.select("#chart").append("svg")
-    .attr("width", wid)
-    .attr("height", hei)
-    .append("g")
-    .attr("transform", "translate(" + wid / 2 + "," + hei / 2 + ")");
+// select paths, use arc generator to draw
+var arcs = vis.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+arcs.append("svg:path")
+    .attr("fill", function(d, i){
+        return color(i);
+    })
+    .attr("d", function (d) {
+        // log the result of the arc generator to show how cool it is :)
+        console.log(arc(d));
+        return arc(d);
+    });
 
-d3.csv("data.csv", type, function(error, data) {
-  if (error) throw error;
-
-  var gq = savage.selectAll(".arc")
-      .data(pie1(data))
-    .enter().append("g")
-      .attr("class", "arc");
-
-  gq.append("path")
-      .attr("d", arch)
-      .style("fill", function(dano) { return color(dano.data.energy); });
-
-  gq.append("text")
-      .attr("transform", function(dano) { return "translate(" + label.centroid(dano) + ")"; })
-      .attr("dy", ".35em")
-      .text(function(dano) { return dano.data.energy; });
-});
-
-function type(dano) {
-  dano.percentage = +dano.percentage;
-  return dano;
-}
+// add the text
+arcs.append("svg:text").attr("transform", function(d){
+      d.innerRadius = 0;
+      d.outerRadius = r;
+    return "translate(" + arc.centroid(d) + ")";}).attr("text-anchor", "middle").attr("class", "pieLabel").text( function(d, i) {
+    return data[i].label;}
+    );
