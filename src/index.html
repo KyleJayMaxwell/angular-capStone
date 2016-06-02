@@ -13,8 +13,7 @@
     </head>
   <body>
     <!-- sample angular code -->
-    <div class="container">
-      <div ng-controller="myController">
+    <div class="container-fluid" ng-controller="myController">
 
         <!-- Nav -->
         <nav class="navbar navbar-default">
@@ -99,21 +98,40 @@
           </div>
         </div>
 
+        <!-- US Map -->
         <div class="row">
-          <div class="col-md-9 center">
+          <div class="col-md-3" ng-show="showPie">
+            <div class="chart center" id="chart">
+              <legend>Energy Production in USA: </legend>
+            </div>
+          </div>
+          <div class="col-md-3" ng-hide="showPie">
+            <p>Dan's paragraph</p>
+          </div>
+          <div class="col-md-6 center">
 
             <div id="tooltip-container"></div>
 
             <div id="canvas-svg"></div>
           </div>
-          <div class="col-md-3">
-            <div class="chart center" id="chart">
-              <legend>Energy Production in USA: </legend>
-            </div>
+                    <div class="col-md-3" ng-show="showPie">
             <div class="colorado center" id="colorado">
               <legend>Energy Production in <span class="stateName">Colorado</span>: </legend>
             </div>
           </div>
+        </div>
+
+<!--         <div class="row">
+          <div class="col-md-6">
+            <div class="chart center" id="chart">
+              <legend>Energy Production in USA: </legend>
+            </div>
+          </div> -->
+<!--           <div class="col-md-6">
+            <div class="colorado center" id="colorado">
+              <legend>Energy Production in <span class="stateName">Colorado</span>: </legend>
+            </div>
+          </div> -->
         </div>
 
 
