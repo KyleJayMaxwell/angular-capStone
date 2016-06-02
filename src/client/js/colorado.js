@@ -1,5 +1,5 @@
-var width = 150 ,
-  height = 150,
+var width = 350 ,
+  height = 350,
   radius = Math.min(width, height) / 2;
 
 var color = d3.scale.ordinal()

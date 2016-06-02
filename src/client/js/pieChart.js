@@ -1,5 +1,5 @@
-var w = 150;
-var h = 150;
+var w = 350;
+var h = 350;
 var r = h/2;
 var color = d3.scale.category20c();
 
