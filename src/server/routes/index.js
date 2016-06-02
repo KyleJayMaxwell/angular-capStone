@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
 });
 
 
-
 router.post('/years', function(req, res, next) {
   var newYear = new Year(req.body);
   newYear.save(function(err, data) {
@@ -50,14 +49,14 @@ router.put('/year/:yearNum/state', function(req, res, next) {
 router.get('/year/:yearNum/state', function(req, res, next) {
     Year
         .find({yearNum : req.params.yearNum})
-    .populate('state')
-    .exec(function(err, data) {
-        if(err) {
-            res.send(err);
-        } else {
-            res.json(data);
-        }
-    });
+        .populate('state')
+        .exec(function(err, data) {
+            if(err) {
+                res.send(err);
+            } else {
+                res.json(data);
+            }
+        });
 });
 //Get Total Energy for Single State for Year
 router.get('/year/:yearNum/state/:state', function(req, res, next) {
