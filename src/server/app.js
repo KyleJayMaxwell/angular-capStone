@@ -3,25 +3,34 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var swig = require('swig');
+var config = require('./_config');
 
 
 // *** routes *** //
-var routes = require('./server/routes/index.js');
+var routes = require('./routes/index.js');
 
-mongoose.connect('mongodb://localhost/kyle_test');
+//*mongo connection
+mongoose.connect(config.mongoURI.test, function(err, res) {
+  if (err) {
+    console.log('Error connecting to the database. ' + err);
+  }
+  else {
+    console.log('Connected to Database: ' + config.mongoURI.test);
+  }
+});
 
 // *** express instance *** //
 var app = express();
 
+app.set('port', process.env.Port || 3000);
 
-// *** view engine *** //
-var swig = new swig.Swig();
-app.engine('html', swig.renderFile);
-app.set('view engine', 'html');
-
+var server = app.listen(app.get('port'),
+function () {
+  console.log('Express server listening on Port ' + server.address().port)
+});
 
 // *** static directory *** //
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +41,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../client/public')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 
 // *** main routes *** //

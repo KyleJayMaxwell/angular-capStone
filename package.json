@@ -21,6 +21,7 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.13.4",
     "mongoose": "^4.4.19",
+    "mongoose-q": "^0.1.0",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
     "router": "^1.1.4",

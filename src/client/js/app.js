@@ -3,5 +3,5 @@
 var app = angular.module('myApp', []);
 
 app.controller('myController', ['$scope', function($scope) {
-  $scope.company = "Lit USA";
+  $scope.company = "FUCK KYLE USA";
 }]);
