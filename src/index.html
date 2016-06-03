@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>It's Lit FAM</title>
 
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+    <link rel="stylesheet" type="text/css" href="client/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="client/css/skeleton.css">
     <link rel="stylesheet" type="text/css" href="client/css/main.css">
     <link rel="stylesheet" type="text/css" href="client/css/timeline.css">
     <link rel="stylesheet" type="text/css" href="client/css/pieChart.css">
@@ -13,73 +13,21 @@
     </head>
   <body>
     <!-- sample angular code -->
-    <div class="container-fluid" ng-controller="myController">
+    <div class="container" ng-controller="myController">
 
-        <!-- Nav -->
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">
-                <p>{{company}}</p>
-              </a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Link</a></li>
-            </ul>
-          </div>
-        </nav>
-
-        <!-- Time Line -->
-        <div class="row">
-          <div class="col-md-12">
-            <ol>
-              <li>
-                2015
-                <span class="details">
-                  Description of point 1
-                </span>
-              </li>
-              <li>
-                2016
-                <span class="details">
-                  Energy of 2016
-                </span>
-              </li>
-              <li>
-                Fuck Dan
-                <span class="details">
-                  Here's your fucking timeline, dick.
-                </span>
-              </li>
-              <li>
-                Fuck Dan
-                <span class="details">
-                  Here's your fucking timeline, dick.
-                </span>
-              </li>
-              <li>
-                Fuck Dan
-                <span class="details">
-                  Here's your fucking timeline, dick.
-                </span>
-              </li>
-              <li>
-                Fuck Dan
-                <span class="details">
-                  Here's your fucking timeline, dick.
-                </span>
-              </li>
-            </ol>
-          </div>
-        </div>
+      <nav>
+        <ul>
+          <li><img src="client/images/currentlogo.png"></li>
+        </ul>
+      </nav>
 
         <!-- Filters -->
         <div class="row">
-          <div class="col-md-4 center">
+          <div class="one-third column center">
             <label for="years">Years of Production: </label>
             <div id="selectors"></div>
           </div>
-          <div class="col-md-4 center">
+          <div class="one-third column center">
             <label for="energyType">Energy Type: </label>
             <select id="energyType" class="energyType">
               <option selected>Coal</option>
@@ -89,7 +37,7 @@
               <option>Petroleum</option>
             </select>
           </div>
-          <div class="col-md-4 center">
+          <div class="one-third column center">
             <label for="chartType">Data Chart: </label>
               <select id="chartType" class="chartType">
                 <option selected>U.S. Map</option>
@@ -100,38 +48,26 @@
 
         <!-- US Map -->
         <div class="row">
-          <div class="col-md-3" ng-show="showPie">
-            <div class="chart center" id="chart">
-              <legend>Energy Production in USA: </legend>
-            </div>
-          </div>
-          <div class="col-md-3" ng-hide="showPie">
-            <p>Dan's paragraph</p>
-          </div>
-          <div class="col-md-6 center">
+          <div class="twelve columns center">
 
             <div id="tooltip-container"></div>
 
             <div id="canvas-svg"></div>
           </div>
-                    <div class="col-md-3" ng-show="showPie">
-            <div class="colorado center" id="colorado">
+
+        </div>
+
+        <div class="row">
+          <div class="one-half column" ng-show="showPie">
+            <div class="pieChart1 center" id="pieChart1">
+              <legend>Energy Production in USA: </legend>
+            </div>
+          </div>
+          <div class="one-half column" ng-show="showPie">
+            <div class="pie2 center" id="pie2">
               <legend>Energy Production in <span class="stateName">Colorado</span>: </legend>
             </div>
           </div>
-        </div>
-
-<!--         <div class="row">
-          <div class="col-md-6">
-            <div class="chart center" id="chart">
-              <legend>Energy Production in USA: </legend>
-            </div>
-          </div> -->
-<!--           <div class="col-md-6">
-            <div class="colorado center" id="colorado">
-              <legend>Energy Production in <span class="stateName">Colorado</span>: </legend>
-            </div>
-          </div> -->
         </div>
 
 
@@ -150,7 +86,7 @@
     <script type="text/javascript" src="client/js/usMap.js"></script>
     <script type="text/javascript" src="client/js/main.js"></script>
     <script type="text/javascript" src="client/js/app.js"></script>
-    <script type="text/javascript" src="client/js/pieChart.js"></script>
-    <script type="text/javascript" src="client/js/colorado.js"></script>
+    <script type="text/javascript" src="client/js/pie.js"></script>
+    <script type="text/javascript" src="client/js/pie2.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
-var w = 350;
-var h = 350;
+var w = 300;
+var h = 300;
 var r = h/2;
 var color = d3.scale.category20c();
 
@@ -9,7 +9,7 @@ var data = [{"label":"Category A", "value":20},
               {"label":"It's Lit Dan", "value":20}];
 
 
-var vis = d3.select('#chart').append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+var vis = d3.select('#pieChart1').append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
 var pie = d3.layout.pie().value(function(d){return d.value;});
 
 // declare an arc generator function

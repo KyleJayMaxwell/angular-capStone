@@ -3,11 +3,11 @@ d3.csv("population.csv", function(err, data) {
 
   var config = {"color1":"#d3e5ff","color2":"#08306B","stateDataColumn":"state_or_territory","defaultValue":"census_population_april_1_2010_number","state":"state_or_territory"};
   
-  var WIDTH = 600 , HEIGHT = 450;
+  var WIDTH = 1000 , HEIGHT = 600;
 
   var COLOR_COUNTS = 9;
   
-  var SCALE = 0.7;
+  var SCALE = 1;
   
   function Interpolate(start, end, steps, count) {
       var s = start,

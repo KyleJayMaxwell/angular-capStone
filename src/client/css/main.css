@@ -2,19 +2,14 @@
 .center{
   text-align: center;
 }
-.navbar {
-  background-color: none;
-  border: none;
-}
-.navbar a{
-  color: black;
+
+nav {
+  height: 10vh;
 }
 
-.arc text {
-  font: 10px sans-serif;
-  text-anchor: middle;
+nav li {
+  list-style-type: none;
 }
-
-.arc path {
-  stroke: #fff;
+nav img {
+  height: 10vh;
 }
