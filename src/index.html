@@ -22,12 +22,15 @@
         <!-- Filters -->
         <div class="row">
           <div class="twelve columns center flexbox">
-            <div class="box"><h1>Hello, Dano</h1></div> 
+            <div class="box">
+              <h1>Hello, Dano</h1>
+              <button ng-click="toggleUsMap()">Donezo</button> 
+            </div>
           </div>
         </div>
 
         <!-- US Map -->
-        <div class="row">
+        <div class="row" ng-show="showUsMap">
           <div class="twelve columns center">
 
             <div id="tooltip-container"></div>
@@ -37,7 +40,7 @@
 
         </div>
 
-        <div class="row">
+        <div class="row" ng-show="showPieGraphs">
           <div class="one-half column" ng-show="showPie">
             <div class="pieChart1 center" id="pieChart1">
               <legend>Energy Production in USA: </legend>
@@ -51,7 +54,7 @@
         </div>
 
         <footer>
-          <p>&copy; 2016 Made by Dan &amp; Kyle</p>
+          <p class="shadow">&copy; 2016 Made by Dan &amp; Kyle</p>
           <img src="client/images/bottomlogo.png">           
         </footer>           
 

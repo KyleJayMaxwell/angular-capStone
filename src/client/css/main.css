@@ -2,7 +2,9 @@
 .center{
   text-align: center;
 }
-
+.shadow{
+  text-shadow: 1px 1px #000000;
+}
 nav {
   height: 15vh;
 }
