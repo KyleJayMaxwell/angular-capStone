@@ -4,14 +4,14 @@
   angular
   .module('currentAmerica')
   // declaring new directive called footer
-  .directive('footer', footer);
+  .directive('header', header);
 
-  function footer() {
+  function header() {
     return {
       // element = E
       restrict: 'E',
       // where it's looking when returning footer
-      templateUrl: 'client/partials/footer.html'  
+      templateUrl: 'client/partials/header.html'  
     };
   }
 })();
