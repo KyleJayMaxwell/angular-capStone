@@ -1,0 +1,21 @@
+{
+  "name": "America Current",
+  "description": "Energy Data visualizer",
+  "main": "gulpfile.js",
+  "authors": [
+    "Daniel Klein <danhirschklein@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/danhklein/angular-capStone",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "datamaps": "^0.5.5"
+  }
+}

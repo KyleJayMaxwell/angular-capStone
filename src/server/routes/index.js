@@ -103,7 +103,7 @@ router.get('/year/:yearNum/:yearNum2/state/:state', function(req, res, next) {
         .find({yearNum : { $in : [req.params.yearNum, req.params.yearNum2]}})
         .populate({
             path: 'state',
-            match: {name:  req.params.state}
+            match: {abbreviation:  req.params.state}
         })
 
         .exec(function(err, data) {

@@ -10,9 +10,11 @@
     <link rel="stylesheet" type="text/css" href="client/css/timeline.css">
     <link rel="stylesheet" type="text/css" href="client/css/pieChart.css">
     <link rel="stylesheet" type="text/css" href="client/css/usMap.css">
+
     </head>
   <body>
     <!-- sample angular code -->
+
     <div class="container" ng-controller="myController">
 
       <nav>
@@ -34,9 +36,9 @@
         <div class="row" ng-show="showUsMap">
           <div class="twelve columns center">
 
-            <div id="tooltip-container"></div>
+            <div id="newmap" style="position: relative; width: 500px; height: 300px;"></div>
 
-            <div id="canvas-svg"></div>
+
           </div>
 
         </div>
@@ -65,12 +67,22 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular-route.min.js"></script>
 
+<<<<<<< HEAD
     <script type="text/javascript" src="client/js/app.js"></script>
     <script type="text/javascript" src="client/js/router.js"></script>
 
     <!-- D3 -->
+=======
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+>>>>>>> 814f567b3d352cabaac3028ab98df3253b3945fb
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.1.0/topojson.min.js">  </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js">  </script>
+    <script src="./client/js/vendor/datamaps.usa.min.js"></script>
+    <script type="text/javascript" src="client/js/datamaps.js"></script>
+
+
     <script type="text/javascript" src="client/js/usMap.js"></script>
     <script type="text/javascript" src="client/js/pie.js"></script>
     <script type="text/javascript" src="client/js/pie2.js"></script>

@@ -18,7 +18,9 @@
   },
   "dependencies": {
     "body-parser": "^1.15.1",
+    "bower": "^1.7.9",
     "cookie-parser": "^1.4.3",
+    "datamaps": "^0.5.5",
     "express": "^4.13.4",
     "mongoose": "^4.4.19",
     "mongoose-q": "^0.1.0",
