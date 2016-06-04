@@ -25,7 +25,7 @@ arcs2.append("svg:path")
     })
     .attr("d", function (d) {
         // log the result of the arc generator to show how cool it is :)
-        console.log(arc2(d));
+        // console.log(arc2(d));
         return arc2(d);
     });
 
