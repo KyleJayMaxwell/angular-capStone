@@ -13,10 +13,8 @@
     .when('/', {
       template: '<landing></landing>'
     })
-
     .when('/home', {
-      template: '<members-all></members-all>'
-      
+      template: '<home></home>'   
     })
   }
 

@@ -16,44 +16,7 @@
 
     <header></header>
 
-    <div class="container" ng-controller="myController">
-
-        <!-- Filters -->
-        <div class="row">
-          <div class="twelve columns center flexbox">
-            <div class="box">
-              <div class="one-half column"><button>Compare Years</button></div>
-              <div class="one-half column"><button>Compare States</button></div>
-              <button ng-click="toggleUsMap()">Donezo</button> 
-            </div>
-          </div>
-        </div>
-
-        <!-- US Map -->
-        <div class="row" ng-show="showUsMap">
-          <div class="twelve columns center">
-
-            <div id="newmap"></div>
-
-
-          </div>
-
-        </div>
-
-        <div class="row" ng-show="showPieGraphs">
-          <div class="one-half column" ng-show="showPie">
-            <div class="pieChart1 center" id="pieChart1">
-              <legend>Energy Production in USA: </legend>
-            </div>
-          </div>
-          <div class="one-half column" ng-show="showPie">
-            <div class="pie2 center" id="pie2">
-              <legend>Energy Production in <span class="stateName">Colorado</span>: </legend>
-            </div>
-          </div>
-        </div>         
-      <!-- end controller -->
-    </div>
+    <div ng-view></div>
 
     <footer></footer>
 
@@ -72,6 +35,7 @@
     <!-- layout -->
     <script type="text/javascript" src="client/js/header.js"></script>
     <script type="text/javascript" src="client/js/footer.js"></script>
+    <script type="text/javascript" src="client/js/index.js"></script>    
 
     <!--Services-->
     <script type="text/javascript" src="client/js/services/crud.js"></script>
