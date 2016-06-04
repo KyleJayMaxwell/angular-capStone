@@ -46,9 +46,21 @@ router.put('/year/:yearNum/state', function(req, res, next) {
 
 //Get all states for year
 
+router.get('/'), function(req, res, next) {
+    Year.find()
+        .populate('state')
+        .exec(function(err, data) {
+            if(err) {
+                res.send(err);
+            } else {
+                res.json(data);
+            }
+        });
+});
+
 router.get('/year/:yearNum/state', function(req, res, next) {
     Year
-        .find({yearNum : req.params.yearNum})
+        .find({yearNum : req.body.yearNum})
         .populate('state')
         .exec(function(err, data) {
             if(err) {

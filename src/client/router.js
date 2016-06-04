@@ -18,6 +18,7 @@
     })
     .when('/home', {
       template: '<members-all></members-all>',
-
+      controller: 'allYearsCtr'
+      
     })
   }
