@@ -1,12 +1,12 @@
 angular
     .module('currentAmerica')
-    .service('yearDataService', yearDataService);
+    .service('energyDataService', energyDataService);
 
-yearDataService.$inject = ['crudService'];
+energyDataService.$inject = ['crudService'];
 
 
 
-function yearDataService (crudService) {
+function energyDataService (crudService) {
     return {
         getAllYears: function () {
             return crudService.getAll(url)

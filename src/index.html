@@ -16,7 +16,7 @@
 
     <header></header>
 
-    <div class="container" ng-controller="myController">
+    <div class="container" ng-controller="DashboardCtrl">
 
         <!-- Filters -->
         <div class="row">
@@ -30,10 +30,11 @@
         </div>
 
         <!-- US Map -->
-        <div class="row" ng-show="showUsMap">
+        <div class="row">
           <div class="twelve columns center">
 
-            <div id="newmap"></div>
+            <div id="newmap" style="position:relative; width:50%; height: 50vh"></div>
+
 
 
           </div>
