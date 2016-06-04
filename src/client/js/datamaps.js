@@ -15,7 +15,7 @@ map = new Datamap({
             datamap.svg
                 .selectAll('.datamaps-subunit')
                 .on('click', function(geography) {
-                alert(geography.properties.name);
+                console.log(geography.properties.name);
             })
         }
 
