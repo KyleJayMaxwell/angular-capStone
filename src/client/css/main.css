@@ -23,6 +23,7 @@ nav img {
   height: 15vh;
 }
 
+
 .flexbox {
   display: flex;
   height: 85vh;
@@ -30,8 +31,6 @@ nav img {
 .box{
   width: 50%;
   margin: auto;
-  background-color: black;
-  color: white;
 }
 footer{
   display: block;

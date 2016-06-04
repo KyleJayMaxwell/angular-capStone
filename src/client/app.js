@@ -6,7 +6,7 @@
 
     'use strict';
 
-    angular.module('myApp', [
+    angular.module('currentAmerica', [
         'ngRoute',
         'ngSanitize',
         'ngAnimate'
