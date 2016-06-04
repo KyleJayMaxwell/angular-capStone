@@ -1,5 +1,5 @@
 angular
-    .module('myApp')
+    .module('currentAmerica')
     .service('yearDataService', yearDataService);
 
 yearDataService.$inject = ['crudService'];

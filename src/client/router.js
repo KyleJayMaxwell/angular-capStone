@@ -2,8 +2,9 @@
 
   'use strict';
 
-  angular.module('currentAmerica')
-    .config(config);
+  angular
+      .module('currentAmerica')
+      .config(config);
 
   config.$inject = ['$routeProvider', '$httpProvider'];
 
@@ -14,8 +15,7 @@
     })
 
     .when('/home', {
-      template: '<members-all></members-all>',
-      controller: 'allYearsCtr'
+      template: '<members-all></members-all>'
       
     })
   }

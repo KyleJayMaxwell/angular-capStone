@@ -4,7 +4,7 @@
     'use strict';
 
     angular
-        .module('myApp')
+        .module('currentAmerica')
         .controller('allYearCtr', allYearsCtr);
     allYearsCtr.$inject = [ 'energyDataService'];
 
