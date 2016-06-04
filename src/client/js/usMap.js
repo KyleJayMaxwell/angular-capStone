@@ -1,7 +1,7 @@
 
 d3.csv("population.csv", function(err, data) {
 
-  var config = {"color1":"#d3e5ff","color2":"#08306B","stateDataColumn":"state_or_territory","defaultValue":"census_population_april_1_2010_number","state":"state_or_territory"};
+  var config = {"color1":"#00ccff","color2":"#336699","stateDataColumn":"state_or_territory","defaultValue":"census_population_april_1_2010_number","state":"state_or_territory"};
   
   var WIDTH = 1000 , HEIGHT = 600;
 
@@ -162,7 +162,7 @@ d3.csv("population.csv", function(err, data) {
           .on("click", function(d) {
             console.log(id_name_map[d.id]);
             $('.stateName').html(id_name_map[d.id]);
-
+            
 
               var html = "";
     

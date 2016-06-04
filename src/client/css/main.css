@@ -2,14 +2,47 @@
 .center{
   text-align: center;
 }
-
+.white{
+  color: white;
+}
+.shadow{
+  text-shadow: 1px 1px #000000;
+}
 nav {
-  height: 10vh;
+  height: 15vh;
+}
+
+nav ul{
+  display: inline-block; 
 }
 
 nav li {
   list-style-type: none;
 }
 nav img {
-  height: 10vh;
+  height: 15vh;
+}
+
+.flexbox {
+  display: flex;
+  height: 85vh;
+}
+.box{
+  width: 50%;
+  margin: auto;
+  background-color: black;
+  color: white;
+}
+footer{
+  display: block;
+  height: 5vh;
+  padding: 10px;
+}
+footer p{
+  font-size: 18px;
+  float: right;
+  margin: 0;
+}
+footer img{
+  height: 5vh;
 }

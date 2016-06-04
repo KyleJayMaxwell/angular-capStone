@@ -3,12 +3,12 @@
 var w2 = 300;
 var h2 = 300;
 var rad = h2/2;
-var color = d3.scale.category20c();
+var color = d3.scale.category20b();
 
 var data2 = [{"label":"Dan It's lit.", "value":20}, 
               {"label":"Hello Dano", "value":30}, 
-              {"label":"Dano", "value":30},
-              {"label":"Dan", "value":20}];
+              {"label":"Dano", "value":10},
+              {"label":"Dan", "value":40}];
 
 
 var vis2 = d3.select('#pie2').append("svg:svg").data([data2]).attr("width", w2).attr("height", h2).append("svg:g").attr("transform", "translate(" + rad + "," + rad + ")");

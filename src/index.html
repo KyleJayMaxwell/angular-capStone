@@ -18,52 +18,33 @@
     <div class="container" ng-controller="myController">
 
       <nav>
-        <ul>
-          <li><img src="client/images/currentlogo.png"></li>
-        </ul>
+        <img class="logo" src="client/images/currentlogo.png"></li>
       </nav>
 
         <!-- Filters -->
         <div class="row">
-          <div class="one-third column center">
-            <label for="years">Years of Production: </label>
-            <div id="selectors"></div>
-          </div>
-          <div class="one-third column center">
-            <label for="energyType">Energy Type: </label>
-            <select id="energyType" class="energyType">
-              <option selected>Coal</option>
-              <option>Natural Gas</option>
-              <option>Nuclear</option>
-              <option>Renewables</option>
-              <option>Petroleum</option>
-            </select>
-          </div>
-          <div class="one-third column center">
-            <label for="chartType">Data Chart: </label>
-              <select id="chartType" class="chartType">
-                <option selected>U.S. Map</option>
-                <option>Table</option>
-              </select>
+          <div class="twelve columns center flexbox">
+            <div class="box">
+              <div class="one-half column"><h1>Hello, Dano</h1></div>
+              <div class="one-half column"><h1>Hello, Dano</h1></div>
+
+              <button class="white" ng-click="toggleUsMap()">Donezo</button> 
+            </div>
           </div>
         </div>
 
         <!-- US Map -->
-        <div class="row">
+        <div class="row" ng-show="showUsMap">
           <div class="twelve columns center">
 
             <div id="newmap" style="position: relative; width: 500px; height: 300px;"></div>
 
 
-            <!--<div id="tooltip-container"></div>-->
-
-            <!--<div id="canvas-svg"></div>-->
-
           </div>
 
         </div>
 
-        <div class="row">
+        <div class="row" ng-show="showPieGraphs">
           <div class="one-half column" ng-show="showPie">
             <div class="pieChart1 center" id="pieChart1">
               <legend>Energy Production in USA: </legend>
@@ -76,10 +57,12 @@
           </div>
         </div>
 
-
+        <footer>
+          <p class="shadow">&copy; 2016 Made by Dan &amp; Kyle</p>
+          <img src="client/images/bottomlogo.png">           
+        </footer>           
 
       <!-- end controller -->
-      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -87,9 +70,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js">  </script>
     <script src="./client/js/vendor/datamaps.usa.min.js"></script>
     <script type="text/javascript" src="client/js/datamaps.js"></script>
+
 
     <script type="text/javascript" src="client/js/usMap.js"></script>
     <script type="text/javascript" src="client/js/main.js"></script>

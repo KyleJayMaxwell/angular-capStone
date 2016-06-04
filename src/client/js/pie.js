@@ -1,7 +1,7 @@
 var w = 300;
 var h = 300;
 var r = h/2;
-var color = d3.scale.category20c();
+var color = d3.scale.category20b();
 
 var data = [{"label":"Category A", "value":20}, 
               {"label":"Category B", "value":30}, 
