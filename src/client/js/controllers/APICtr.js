@@ -10,7 +10,7 @@ function MyCtrl($scope, $http) {
 
 
     // when landing on the page, get all todos and show them
-    $http.get('https://localhost:8888/year/1999/state')
+    $http.get('/year/state')
         .success(function (data) {
             $scope.todos = data;
             console.log(data);
@@ -20,4 +20,5 @@ function MyCtrl($scope, $http) {
         });
 
 }
+
 
