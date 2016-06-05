@@ -16,16 +16,12 @@
 
   function DashboardCtrl () {
     var vm = this;
-    vm.showPieGraphs = false;
-    vm.showUsMap = false;
-    vm.toggleUsMap = function(){
-      vm.showUsMap = !vm.showUsMap;
-    }
+    vm.showPieGraphs = true;
     vm.togglePieGraphs = function(){
       vm.showPieGraphs = !vm.showPieGraphs;
+      console.log("kyle sucks")
     }
     
-   
   }
 
 })();
