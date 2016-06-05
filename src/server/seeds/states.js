@@ -2,7 +2,7 @@ var mongoose = require('mongoose-q')(require('mongoose'));
 mongoose.connect('mongodb://localhost/kyle_test');
 var State = require('../models/states.js');
 var Year = require('../models/years.js');
-var statesArray = require('../../state_array.js');
+var statesArray = require('../state_array.js');
 var energyData = require('../energyData.js')
 const yearArray =
 [ { yearNum: '1990' },

@@ -4,21 +4,20 @@
     'use strict';
 
     angular
-        .module('currentAmerica')
-        .controller('allYearCtr', allYearsCtr);
-    allYearsCtr.$inject = [ 'energyDataService'];
+        .module('currentAmerica', [])
+        .controller('AllYearCtr', AllYearsCtr);
+    AllYearsCtr.$inject = [ 'energyDataService'];
 
 
-    function allYearsCtr (energyDataService) {
+    function AllYearsCtr (energyDataService) {
         var vm = this;
+        console.log('Here');
         energyDataService.getAllYears()
             .then(function(data) {
-                /* jshint validthis: true */
                 console.log('members', data);
                 vm.allYears = data;
             });
     }
-
 })();
 
 

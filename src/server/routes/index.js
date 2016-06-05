@@ -46,7 +46,7 @@ router.put('/year/:yearNum/state', function(req, res, next) {
 
 //Get all states for year
 
-router.get('/'), function(req, res, next) {
+router.get('/year/state', function(req, res, next) {
     Year.find()
         .populate('state')
         .exec(function(err, data) {

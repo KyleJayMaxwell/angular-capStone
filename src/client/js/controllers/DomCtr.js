@@ -2,8 +2,6 @@
 
 
 
-
-
 (function () {
 
   'use strict';
@@ -11,7 +9,7 @@
   angular
       .module('currentAmerica')
       .controller('DashboardCtrl', DashboardCtrl);
-  DashboardCtrl.$inject = [ 'energyDataService'];
+  DashboardCtrl.$inject = ['energyDataService'];
 
 
   function DashboardCtrl () {

@@ -3,10 +3,12 @@ var h = 300;
 var r = h/2;
 var color = d3.scale.category20b();
 
-var data = [{"label":"Category A", "value":20}, 
-              {"label":"Category B", "value":30}, 
+var data = [
+    {"label":"Category A", "value":20},
+              {"label":"Category B", "value":30},
               {"label":"Category C", "value":30},
-              {"label":"It's Lit Dan", "value":20}];
+              {"label":"It's Lit Dan", "value":20}
+];
 
 
 var vis = d3.select('#pieChart1').append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
