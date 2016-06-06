@@ -1,9 +1,17 @@
 angular
     .module('currentAmerica').controller('MyCtrl', ['$scope', 'energyDataService',
  function($scope, energyDataService) {
-    $scope.hideFilters = false;
+    $scope.hideFilters = true;
     $scope.toggleFilters = function() {
         $scope.hideFilters = !$scope.hideFilters;
+    }
+    $scope.compareYears = false;
+    $scope.compareStates = false;
+    $scope.toggleStates = function() {
+        $scope.compareStates = !$scope.compareStates;
+    }
+    $scope.toggleYears = function() {
+        $scope.compareYears = !$scope.compareYears;
     }
         
     $scope.getAllYears = function(){

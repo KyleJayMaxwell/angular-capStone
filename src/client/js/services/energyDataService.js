@@ -7,7 +7,7 @@ energyDataService.$inject = ['crudService'];
 
 
 function energyDataService (crudService) {
-    var url='http://localhost:3000/year/state'
+    var url='http://localhost:3000/year/1999/state/colorado'
     return {
         getAllYears: function () {
             return crudService.getAll(url)
