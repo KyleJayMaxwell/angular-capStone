@@ -45,6 +45,7 @@
                 <div class="states" ng-show="compareStates">
                   <p>Pick a Year:</p>
                   <select name="yearSelect1" ng-model="data.yearSelect1" >
+                    <option ng-selected="compareStates" disabled value="">Year 1</option>
                     <option ng-repeat="year in years" value={{year.value}}>{{year.year}}</option>
                   </select><br>
 
@@ -54,9 +55,11 @@
               <div class="states" ng-show="compareYears">
                   <p>Pick a Two Years</p>
                 <select name="yearSelect1" ng-model="data.yearSelect1" >
+                  <option ng-selected="compareYears" disabled value="">Year 1</option>
                   <option ng-repeat="year in years" value={{year.value}}>{{year.year}}</option>
-                </select><br>
+                </select>
                 <select name="yearSelect2" ng-model="data.yearSelect2" >
+                  <option ng-selected="compareYears" disabled value="">Year 2</option>
                   <option ng-repeat="year in years" value={{year.value}}>{{year.year}}</option>
                 </select><br>
                   <br/>
