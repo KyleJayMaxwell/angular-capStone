@@ -83,7 +83,7 @@
          },
 
          fills: {
-             defaultFill: 'blue'
+             defaultFill: '00ccff'
          },
          responsive: true,
 

@@ -5,6 +5,7 @@
 
     angular.module('currentAmerica', [
         'ngRoute',
+        'ngAnimate',
         'ngSanitize',
         'datamaps'
     ]);
