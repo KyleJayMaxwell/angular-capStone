@@ -4,9 +4,9 @@ var mongoose = require('mongoose-q')(require('mongoose'));
 var Year = require('../models/years.js');
 var State = require('../models/states.js');
 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
 
 
 router.post('/years', function(req, res, next) {
@@ -44,19 +44,19 @@ router.put('/year/:yearNum/state', function(req, res, next) {
   })
 });
 
-//Get all states for year
+// Get all states for year
 
-// router.get('/year/state', function(req, res, next) {
-//     Year.find()
-//         .populate('state')
-//         .exec(function(err, data) {
-//             if(err) {
-//                 res.send(err);
-//             } else {
-//                 res.json(data);
-//             }
-//         });
-// });
+router.get('/year/state', function(req, res, next) {
+    Year.find()
+        .populate('state')
+        .exec(function(err, data) {
+            if(err) {
+                res.send(err);
+            } else {
+                res.json(data);
+            }
+        });
+});
 
 router.get('/year/:yearNum/state', function(req, res, next) {
     Year
@@ -84,9 +84,8 @@ router.get('/year/:yearNum/state/:state', function(req, res, next) {
             if(err) {
                 res.send(err);
             } else {
-                res.json(
-                    //drills down to energy sources
-                    data[0]['state'][0]['producer'][0]["Total Electric Power Industry"]);
+                res.json(data)
+
             }
         });
 });
