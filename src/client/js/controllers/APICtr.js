@@ -32,6 +32,10 @@ angular
          }
      }
 
+
+     parseYear2 = function (data, yearID, stateID) {
+         data[yearID].state[stateID].producer[0]['Total Electric Power Industry']
+     }
  // $scope.loading = true;
 
  // $scope.getProfile = function(id){
