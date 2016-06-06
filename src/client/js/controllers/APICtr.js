@@ -74,24 +74,31 @@ angular
          }
      }
 
+     $scope.mapObject = {
+         scope: 'usa',
+         options: {
+             width: 1110,
+             legendHeight: 60 // optionally set the padding for the legend
+         },
+
+         fills: {
+             defaultFill: 'blue'
+         },
+         responsive: true
+
+     }
+     
+     $scope.updateActiveGeography = function(geography) {
+         $scope.stateName = geography.properties.name;
+         $scope.stateCode = geography.properties.stateNum;
+         console.log(geography.properties.stateNum);
+     }
+
 
 
      parseYear2 = function (data, yearID, stateID) {
          data[yearID].state[stateID].producer[0]['Total Electric Power Industry']
      }
- // $scope.loading = true;
 
- // $scope.getProfile = function(id){
- //   console.log(id);
- //   memberDataService.getProfile(id)
- //     .then(function(member){
- //       $scope.member = member.data.data;
- //       console.log($scope.member);
- //       $scope.profile = true;
-
- //     })
- // };
-
- // $scope.sortType = '-date';
 
 }]);
