@@ -26,6 +26,10 @@ nav img {
   display: flex;
   height: 60vh;
 }
+.done {
+  display: flex;
+  height: 25vh;
+}
 .flexbox {
   display: flex;
   height: 85vh;
