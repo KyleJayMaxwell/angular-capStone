@@ -7,17 +7,20 @@ angular
     MyCtrl.$inject = ['$scope', '$http'];
 
 function MyCtrl($scope, $http) {
-
+    $scope.hideFilters = false;
+    $scope.toggleFilters = function() {
+        $scope.hideFilters = !$scope.hideFilters;
+    }  
 
     // when landing on the page, get all todos and show them
-    $http.get('https://localhost:8888/year/1999/state')
-        .success(function (data) {
-            $scope.todos = data;
-            console.log(data);
-        })
-        .error(function (data) {
-            console.log('Error: ' + data);
-        });
+    // $http.get('https://localhost:8888/year/1999/state')
+    //     .success(function (data) {
+    //         $scope.todos = data;
+    //         console.log(data);
+    //     })
+    //     .error(function (data) {
+    //         console.log('Error: ' + data);
+    //     });
 
 }
 
