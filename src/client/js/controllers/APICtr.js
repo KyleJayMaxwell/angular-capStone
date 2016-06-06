@@ -1,26 +1,34 @@
-
-
 angular
-    .module('currentAmerica')
-    .controller('MyCtrl', MyCtrl);
-
-    MyCtrl.$inject = ['$scope', '$http'];
-
-function MyCtrl($scope, $http) {
+    .module('currentAmerica').controller('MyCtrl', ['$scope', 'energyDataService',
+ function($scope, energyDataService) {
     $scope.hideFilters = false;
     $scope.toggleFilters = function() {
         $scope.hideFilters = !$scope.hideFilters;
-    }  
+    }
+        
+    $scope.getAllYears = function(){
 
-    // when landing on the page, get all todos and show them
-    // $http.get('https://localhost:8888/year/1999/state')
-    //     .success(function (data) {
-    //         $scope.todos = data;
-    //         console.log(data);
-    //     })
-    //     .error(function (data) {
-    //         console.log('Error: ' + data);
-    //     });
+        energyDataService.getAllYears()
+        .then(function(years) {
+            $scope.allYearsData = years.data;
+            console.log($scope.allYearsData);
+            return $scope.allYearsData;
+        })
+    };
 
-}
+ // $scope.loading = true;
 
+ // $scope.getProfile = function(id){
+ //   console.log(id);
+ //   memberDataService.getProfile(id)
+ //     .then(function(member){
+ //       $scope.member = member.data.data;
+ //       console.log($scope.member);
+ //       $scope.profile = true;
+
+ //     })
+ // };
+
+ // $scope.sortType = '-date';
+
+}]);

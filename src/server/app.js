@@ -34,8 +34,14 @@ function () {
   console.log('Express server listening on Port ' + server.address().port)
 });
 
-// *** static directory *** //
-app.set('views', path.join(__dirname, 'views'));
+
+//*** allows CORS ***//
+app.use(function(req, res, next) { //allow cross origin requests
+  res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 
 // *** config middleware *** //
@@ -59,6 +65,7 @@ app.use(function(req, res, next) {
 
 
 // *** error handlers *** //
+
 
 // development error handler
 // will print stacktrace
