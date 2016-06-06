@@ -1,9 +1,8 @@
-angular
-    .module('currentAmerica').controller('MyCtrl', ['$scope', 'energyDataService',
- function($scope, energyDataService) {
-    $scope.hideFilters = true;
+var currentAmerica = angular.module('currentAmerica', ['ngAnimate']).controller('MyCtrl', ['$scope', 'energyDataService',
+ function($scope, ngAnimate, energyDataService) {
+    $scope.showFilters = false;
     $scope.toggleFilters = function() {
-        $scope.hideFilters = !$scope.hideFilters;
+        $scope.showFilters = !$scope.showFilters;
     }
     $scope.compareYears = false;
     $scope.compareStates = false;

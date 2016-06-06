@@ -18,7 +18,7 @@
 
     <div class="container" ng-controller='MyCtrl'>
 
-        <div class="row" ng-if="hideFilters">
+        <div class="row animate-show" ng-hide="showFilters">
           <div class="twelve columns center landing">
             <div class="box">
               <p>Landing Paragraph</p>
@@ -26,16 +26,18 @@
           </div>
         </div>
         
-        <div class="row">
+        <div class="row animate-show" ng-hide="showFilters">
           <div class="twelve columns center">
-            <button ng-show="hideFilters" ng-click="hideFilters = false">Show Filters</button>     
+            <button ng-click="showFilters = !showFilters">Show Filters</button>     
           </div>
         </div>
 
 
 
         <!-- Filters -->
-      <div class="row" ng-if="!hideFilters">
+
+        <div class="row animate-show" ng-show="showFilters">
+
           <div class="twelve columns center flexbox">
             <div class="box">
               <div class="one-half column" ng-click="toggleYears()"><button>Compare Years</button></div>
@@ -101,7 +103,7 @@
     <!-- Angular -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular-route.min.js"></script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular-animate.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular-animate.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular-sanitize.js"></script>
     <script type="text/javascript" src="client/app.js"></script>
     <script type="text/javascript" src="client/router.js"></script>
