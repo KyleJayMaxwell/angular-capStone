@@ -88,18 +88,21 @@
          responsive: true,
 
      };
+
+     $scope.stateCode;
      
      $scope.updateActiveGeography = function(geography) {
          $scope.stateName = geography.properties.name;
          $scope.stateCode = geography.properties.stateNum;
-         console.log(geography.properties.stateNum);
+         console.log($scope.stateCode);
      };
 
+     //
 
 
-     // parseYear2 = function (data, yearID, stateID) {
-     //     data[yearID].state[stateID].producer[0]['Total Electric Power Industry']
-     // }
+     parseYear2 = function (data, yearID, stateID) {
+         data[yearID].state[stateID].producer[0]['Total Electric Power Industry']
+     }
 
 
 }]);
