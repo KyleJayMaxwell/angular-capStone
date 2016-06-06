@@ -3,7 +3,7 @@ map = new Datamap({
         element: document.getElementById('newmap'),
         scope: 'usa',
         fills: {
-            defaultFill: 'blue'
+            defaultFill: '00ccff'
         },
         geographyConfig: {
             highlightOnHover: true,
@@ -15,6 +15,7 @@ map = new Datamap({
             datamap.svg
                 .selectAll('.datamaps-subunit')
                 .on('click', function(geography) {
+                    fill: rgb(255, 128, 0);
                 console.log(geography.properties.stateNum);
             })
         }
