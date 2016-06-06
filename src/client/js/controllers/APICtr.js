@@ -19,6 +19,34 @@ angular
         }
         $scope.compareYears = !$scope.compareYears;
     }
+
+     $scope.years = [
+         {'value': 0, 'year': 1990},
+         {'value': 1, 'year': 1991},
+         {'value': 2, 'year': 1992},
+         {'value': 3, 'year': 1993},
+         {'value': 4, 'year': 1994},
+         {'value': 5, 'year': 1995},
+         {'value': 6, 'year': 1996},
+         {'value': 7, 'year': 1997},
+         {'value': 8, 'year': 1998},
+         {'value': 9, 'year': 1999},
+         {'value': 10, 'year': 2000},
+         {'value': 11, 'year': 2001},
+         {'value': 12, 'year': 2002},
+         {'value': 13, 'year': 2003},
+         {'value': 14, 'year': 2004},
+         {'value': 15, 'year': 2005},
+         {'value': 16, 'year': 2006},
+         {'value': 17, 'year': 2007},
+         {'value': 18, 'year': 2008},
+         {'value': 19, 'year': 2009},
+         {'value': 20, 'year': 2010},
+         {'value': 21, 'year': 2011},
+         {'value': 22, 'year': 2012},
+         {'value': 23, 'year': 2013},
+         {'value': 24, 'year': 2014}
+     ]
         
     $scope.getAllYears = function(){
 
@@ -46,6 +74,11 @@ angular
          }
      }
 
+
+
+     parseYear2 = function (data, yearID, stateID) {
+         data[yearID].state[stateID].producer[0]['Total Electric Power Industry']
+     }
  // $scope.loading = true;
 
  // $scope.getProfile = function(id){

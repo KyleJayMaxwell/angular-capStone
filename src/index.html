@@ -34,6 +34,7 @@
         </div>
 
 
+
         <!-- Filters -->
         <div class="row" ng-if="!hideFilters">
           <div class="twelve columns center flexbox">
@@ -42,21 +43,22 @@
               <div class="one-half column"><button ng-click="toggleStates()">Compare States</button></div>
               <div class="twelve columns">
                 <div class="states" ng-show="compareStates">
-                  <p>Pick a Year:</p>  
-                  <select>
-                    <option>2014</option>
-                  </select>
+                  <p>Pick a Year:</p>
+                  <select name="yearSelect1" ng-model="data.yearSelect1" >
+                    <option ng-repeat="year in years" value={{year.value}}>{{year.year}}</option>
+                  </select><br>
+
                   <br/>
                   <button ng-click="toggleStates()">Reset</button>
                 </div>
               <div class="states" ng-show="compareYears">
-                  <p>Pick a Two Years</p>  
-                  <select>
-                    <option>2014</option>
-                  </select>
-                  <select>
-                    <option>2014</option>
-                  </select>
+                  <p>Pick a Two Years</p>
+                <select name="yearSelect1" ng-model="data.yearSelect1" >
+                  <option ng-repeat="year in years" value={{year.value}}>{{year.year}}</option>
+                </select><br>
+                <select name="yearSelect2" ng-model="data.yearSelect2" >
+                  <option ng-repeat="year in years" value={{year.value}}>{{year.year}}</option>
+                </select><br>
                   <br/>
                   <button ng-click="toggleYears()">Reset</button>
                 </div>
