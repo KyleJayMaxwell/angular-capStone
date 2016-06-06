@@ -19,15 +19,52 @@
 
     <div class="container" ng-controller='MyCtrl'>
 
-        <!-- Filters -->
-        <div class="row show-hide" ng-hide="hideFilters">
-          <div class="twelve columns center flexbox">
+        <div class="row" ng-if="hideFilters">
+          <div class="twelve columns center landing">
             <div class="box">
-              <div class="one-half column" ng-click="toggleFilters()"><button>Compare Years</button></div>
-              <div class="one-half column"><button ng-click="getAllYears()">Compare States</button></div>
+              <p>Landing Paragraph</p>
             </div>
           </div>
         </div>
+        
+        <div class="row">
+          <div class="twelve columns center">
+            <button ng-show="hideFilters" ng-click="hideFilters = false">Show Filters</button>     
+          </div>
+        </div>
+
+
+        <!-- Filters -->
+        <div class="row" ng-if="!hideFilters">
+          <div class="twelve columns center flexbox">
+            <div class="box">
+              <div class="one-half column" ng-click="toggleYears()"><button>Compare Years</button></div>
+              <div class="one-half column"><button ng-click="toggleStates()">Compare States</button></div>
+              <div class="twelve columns">
+                <div class="states" ng-show="compareStates">
+                  <p>Pick a Year:</p>  
+                  <select>
+                    <option>2014</option>
+                  </select>
+                  <br/>
+                  <button ng-click="toggleStates()">Reset</button>
+                </div>
+              <div class="states" ng-show="compareYears">
+                  <p>Pick a Two Years</p>  
+                  <select>
+                    <option>2014</option>
+                  </select>
+                  <select>
+                    <option>2014</option>
+                  </select>
+                  <br/>
+                  <button ng-click="toggleYears()">Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
 
         <!-- US Map -->
