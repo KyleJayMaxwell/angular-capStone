@@ -17,6 +17,7 @@
     "run-sequence": "^1.1.4"
   },
   "dependencies": {
+    "angular-datamaps": "^0.1.2",
     "body-parser": "^1.15.1",
     "bower": "^1.7.9",
     "cookie-parser": "^1.4.3",

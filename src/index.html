@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="client/css/main.css">
     <link rel="stylesheet" type="text/css" href="client/css/pieChart.css">
 
-
     </head>
   <body>
     <!-- sample angular code -->
@@ -36,7 +35,9 @@
 
 
         <!-- Filters -->
+
         <div class="row animate-show" ng-show="showFilters">
+
           <div class="twelve columns center flexbox">
             <div class="box">
               <div class="one-half column" ng-click="toggleYears()"><button>Compare Years</button></div>
@@ -67,16 +68,13 @@
           </div>
         </div>
 
-
-
         <!-- US Map -->
         <div class="row">
           <div class="twelve columns">
             {{oneYearData}}
 
-            <div id="newmap" style="position:relative; width:100%; height: 50vh"></div>
-
-
+            <datamap map="mapObject" on-click="updateActiveGeography">
+            </datamap>
 
           </div>
 
@@ -96,9 +94,6 @@
         </div>
       <!-- end controller -->
     </div>
-
-
-
 
 
     <footer></footer>
@@ -128,8 +123,10 @@
     <!-- D3 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script> 
     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js">  </script>
+
     <script src="./client/js/vendor/datamaps.usa.min.js"></script>
-    <script type="text/javascript" src="client/js/datamaps.js"></script>
+    <script src="./client/js/vendor/angular-datamaps.min.js"></script>
+    <!--<script type="text/javascript" src="client/js/datamaps.js"></script>-->
     <script type="text/javascript" src="client/js/pie.js"></script>
     <script type="text/javascript" src="client/js/pie2.js"></script>
 
