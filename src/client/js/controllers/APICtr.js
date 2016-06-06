@@ -8,9 +8,15 @@ angular
     $scope.compareYears = false;
     $scope.compareStates = false;
     $scope.toggleStates = function() {
+        if($scope.compareYears = true){
+            $scope.compareYears = false;
+        }
         $scope.compareStates = !$scope.compareStates;
     }
     $scope.toggleYears = function() {
+        if($scope.compareStates = true){
+            $scope.compareStates = false;
+        }
         $scope.compareYears = !$scope.compareYears;
     }
         
