@@ -8,4 +8,6 @@ var stateSchema = new Schema({
     producer : [{type : Mixed}]
 });
 
-var State =mongoose.model('State', stateSchema);
+var State = mongoose.model('State', stateSchema);
+
+module.exports = State;

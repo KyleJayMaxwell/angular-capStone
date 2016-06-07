@@ -6,8 +6,12 @@
 
 
     $scope.spanState = "Colorado";
+    $scope.spanState1 = "Colorado";
+    $scope.spanYear = "1999";
+    $scope.spanYear1 = "1990";
 
-     $scope.showFilters = false;
+
+    $scope.showFilters = false;
 
     $scope.compareYears = false;
     $scope.compareStates = false;
@@ -92,11 +96,10 @@
 
      function bothChartsStates (year, state1, state2) {
         $scope.pie1 = setValues(year, state1);
-        $scope.pie2 = setValues(year, state2)
+        $scope.pie2 = setValues(year, state2);
      }
 
      function bothChartsYears (year1, year2, state) {
-
         $scope.pie1 = setValues(year1, state);
         $scope.pie2 = setValues(year2, state);
      }
@@ -107,7 +110,6 @@
           console.log('comparestatesWorks')
         }
         if ($scope.compareYears && $scope.data.yearSelect1 && $scope.data.yearSelect2 && $scope.stateCode) {
-
           bothChartsYears($scope.data.yearSelect1, $scope.data.yearSelect2, $scope.stateCode)
            console.log('compareYersWorks', $scope.data.yearSelect1 + $scope.data.yearSelect2 + $scope.stateCode  )
         }
@@ -132,10 +134,12 @@
      // function submit (param1, param2, param3) {}
 
      $scope.updateActiveGeography = function(geography) {
-        $scope.spanState = geography.properties.name;
          $scope.stateName = geography.properties.name;
          $scope.stateCode = geography.properties.stateNum;
-         console.log($scope.stateCode);
+         console.log($scope.stateName);
+         if($scope.stateName !== $scope.spanState){
+            $scope.spanState = $scope.stateName;
+         }
          // $scope.$apply();
      };
 
