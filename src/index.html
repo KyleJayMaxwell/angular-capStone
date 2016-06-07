@@ -16,7 +16,10 @@
     <header></header>
 
 
+
     <div class="container" ng-controller='MyCtrl'>
+
+    {{parsed}}
 
         <div class="row animate-show" ng-hide="showFilters">
           <div class="twelve columns center landing">
@@ -29,11 +32,10 @@
         <div class="row animate-show done" ng-hide="showFilters">
 
           <div class="twelve columns center">
-            <button ng-click="showFilters = !showFilters; getAllYears">Show Filters</button>
+            <button ng-click="showFilters = !showFilters">Show Filters</button>
 
           </div>
         </div>
-
 
 
         <!-- Filters -->
@@ -82,7 +84,7 @@
             </datamap>
           </div>
           <div class="twelve columns center">
-            <button>Submit</button>
+            <button ng-click="submit()">Submit</button>
           </div>
         </div>
 

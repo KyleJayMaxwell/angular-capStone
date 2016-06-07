@@ -1,7 +1,7 @@
  angular
      .module('currentAmerica')
      .controller('MyCtrl', ['$scope', 'energyDataService',
- function($scope, ngAnimate, energyDataService) {
+ function($scope,  energyDataService, ngAnimate) {
     $scope.spanState = "Colorado";
 
      $scope.showFilters = false;
@@ -49,28 +49,56 @@
          {'value': 24, 'year': 2014}
      ];
 
+
+
     $scope.getAllYears = function(){
         energyDataService.getAllYears()
         .then(function(years) {
             $scope.allYearsData = years.data;
+            $scope.parseData($scope.allYearsData, 2, 3)
+
         })
     };
+    $scope.getAllYears();
 
-     parseYear = function (data) {
-         for (var i =0; i<data.length; i++) {
-             if (data[i]["yearNum"] === "2000") {
-                oneYearData = data[i];
-                 console.log(oneYearData);
-                 for (var j=0; j<oneYearData.state.length; j++) {
-                     console.log('59 checks')
-                    if (oneYearData.state[j].name === "Alaska") {
-                   oneStateOneYearData = oneYearData.state[j].producer[0]['Total Electric Power Industry']
-                    console.log(oneStateOneYearData)
-                    }
-                }
-             }
-         }
-     };
+     $scope.parseData = function (data, yearID, stateID) {
+        $scope.parsed = data[yearID].state[stateID].producer[0]['Total Electric Power Industry'];
+
+     }
+
+     function setValues (year, state) {
+        var obj={};
+        obj.labels = Object.keys($scope.parsed)
+        obj.values = obj.labels.map(function(key) {
+                return parseFloat($scope.parsed[key].replace(/,/g, ''));
+            })
+        return obj
+     }
+
+     function bothChartsStates (year, state1, state2) {
+        $scope.pie1 = setValues(year, state1);
+        $scope.pie2 = setValues(year, state2)
+     }
+
+     function bothChartsYears (year1, year2, state) {
+        $scope.pie1 = setValues(year1, state);
+        $scope.pie2 = setValues(year2, state);
+     }
+
+     $scope.submit = function () {
+      if ($scope.compareStates && $scope.data.yearSelect1 && $scope.data.stateSelectA && $scope.data.stateSelectB) {
+          bothChartsStates($scope.data.yearSelect1, $scope.data.stateSelectA, $scope.data.stateSelectB)
+          console.log('comparestatesWorks')
+        }
+        if ($scope.compareYears && $scope.data.yearSelect1 && $scope.data.yearSelect2 && $scope.stateCode) {
+          bothChartsYears($scope.data.yearSelect1, $scope.data.yearSelect2, $scope.stateCode)
+           console.log('compareYersWorks', $scope.data.yearSelect1 + $scope.data.yearSelect2 + $scope.stateCode  )
+        }
+        $scope.$apply()
+    }
+
+
+
 
      $scope.mapObject = {
          scope: 'usa',
@@ -93,23 +121,13 @@
          $scope.stateName = geography.properties.name;
          $scope.stateCode = geography.properties.stateNum;
          console.log($scope.stateCode);
-         $scope.$apply();
+         // $scope.$apply();
      };
 
-     $scope.pie1 = {};
-     $scope.pie2 = {};
-
-     $scope.pie1.labels = ["Solar", "In-Store Sales", "Mail-Order Sales"];
-     $scope.pie2.labels = []
-     $scope.pie1.data = [700, 500, 100];
-     $scope.pie2.data = []
 
 
 
 
-     parseYear2 = function (data, yearID, stateID) {
-         data[yearID].state[stateID].producer[0]['Total Electric Power Industry']
-     }
 
 
 }]);
