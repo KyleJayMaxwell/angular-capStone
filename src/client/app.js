@@ -7,6 +7,7 @@
         'ngRoute',
         'ngAnimate',
         'ngSanitize',
-        'datamaps'
+        'datamaps',
+        'chart.js'
     ]);
 })();

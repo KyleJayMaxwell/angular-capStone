@@ -2,10 +2,9 @@
      .module('currentAmerica')
      .controller('MyCtrl', ['$scope', 'energyDataService',
  function($scope, ngAnimate, energyDataService) {
-    $scope.showFilters = false;
-    $scope.toggleFilters = function() {
-        $scope.showFilters = !$scope.showFilters;
-    }
+
+     $scope.showFilters = false;
+
     $scope.compareYears = false;
     $scope.compareStates = false;
     $scope.toggleStates = function() {
@@ -47,15 +46,12 @@
          {'value': 22, 'year': 2012},
          {'value': 23, 'year': 2013},
          {'value': 24, 'year': 2014}
-     ]
-        
-    $scope.getAllYears = function(){
+     ];
 
+    $scope.getAllYears = function(){
         energyDataService.getAllYears()
         .then(function(years) {
             $scope.allYearsData = years.data;
-            // console.log($scope.allYearsData);
-            parseYear(years.data)
         })
     };
 
@@ -89,15 +85,24 @@
 
      };
 
-     $scope.stateCode;
-     
+     // function submit (param1, param2, param3) {}
+
      $scope.updateActiveGeography = function(geography) {
          $scope.stateName = geography.properties.name;
          $scope.stateCode = geography.properties.stateNum;
          console.log($scope.stateCode);
+         $scope.$apply();
      };
 
-     //
+     $scope.pie1 = {};
+     $scope.pie2 = {};
+
+     $scope.pie1.labels = ["Solar", "In-Store Sales", "Mail-Order Sales"];
+     $scope.pie2.labels = []
+     $scope.pie1.data = [700, 500, 100];
+     $scope.pie2.data = []
+
+
 
 
      parseYear2 = function (data, yearID, stateID) {
