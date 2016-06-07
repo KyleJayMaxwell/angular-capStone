@@ -2,6 +2,9 @@
      .module('currentAmerica')
      .controller('MyCtrl', ['$scope', 'energyDataService',
  function($scope,  energyDataService, ngAnimate) {
+
+
+
     $scope.spanState = "Colorado";
 
      $scope.showFilters = false;
@@ -55,7 +58,7 @@
         energyDataService.getAllYears()
         .then(function(years) {
             $scope.allYearsData = years.data;
-            $scope.parseData($scope.allYearsData, 2, 3)
+
 
         })
     };
@@ -66,13 +69,25 @@
 
      }
 
+
      function setValues (year, state) {
+        // var promise = new Promise(
+        //     function (resolve, reject) {
+        //         resolve($scope.parseData($scope.allYearsData, year, state))
+        //     })
+
+        $scope.parseData($scope.allYearsData, year, state)
         var obj={};
-        obj.labels = Object.keys($scope.parsed)
-        obj.values = obj.labels.map(function(key) {
-                return parseFloat($scope.parsed[key].replace(/,/g, ''));
+        obj.labels = Object.keys($scope.parsed);
+        obj.labels.splice(0,1);
+        obj.data = obj.labels.map(function(key) {
+                console.log($scope.parsed[key])
+                if(typeof $scope.parsed[key] === 'string'){
+                    return parseFloat($scope.parsed[key].replace(/,/g, ''));
+                }
+                return $scope.parsed[key];
             })
-        return obj
+        return obj;
      }
 
      function bothChartsStates (year, state1, state2) {
@@ -81,6 +96,7 @@
      }
 
      function bothChartsYears (year1, year2, state) {
+
         $scope.pie1 = setValues(year1, state);
         $scope.pie2 = setValues(year2, state);
      }
@@ -91,10 +107,11 @@
           console.log('comparestatesWorks')
         }
         if ($scope.compareYears && $scope.data.yearSelect1 && $scope.data.yearSelect2 && $scope.stateCode) {
+
           bothChartsYears($scope.data.yearSelect1, $scope.data.yearSelect2, $scope.stateCode)
            console.log('compareYersWorks', $scope.data.yearSelect1 + $scope.data.yearSelect2 + $scope.stateCode  )
         }
-        $scope.$apply()
+
     }
 
 
@@ -106,12 +123,10 @@
              width: 1110,
              legendHeight: 60 // optionally set the padding for the legend
          },
-
          fills: {
              defaultFill: '00ccff'
          },
          responsive: true,
-
      };
 
      // function submit (param1, param2, param3) {}
