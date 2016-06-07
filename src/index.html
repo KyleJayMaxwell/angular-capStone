@@ -26,7 +26,7 @@
           </div>
         </div>
 
-        <div class="row animate-show" ng-hide="showFilters">
+        <div class="row animate-show done" ng-hide="showFilters">
 
           <div class="twelve columns center">
             <button ng-click="showFilters = !showFilters; getAllYears">Show Filters</button>
@@ -50,7 +50,7 @@
                   <select name="yearSelect1" ng-model="data.yearSelect1" >
                     <option ng-selected="compareStates" disabled value="">Year 1</option>
                     <option ng-repeat="year in years" value={{year.value}}>{{year.year}}</option>
-                  </select><br>
+                  </select>
 
                   <br/>
                   <button ng-click="toggleStates()">Reset</button>
@@ -80,15 +80,15 @@
 
             <datamap map="mapObject" on-click="updateActiveGeography">
             </datamap>
-            Test
-    {{stateCode}}
           </div>
-
+          <div class="twelve columns center">
+            <button>Submit</button>
+          </div>
         </div>
 
-        <div class="row">
+        <div class="row margin-top">
           <div class="one-half column" >
-
+            <legend>Energy Production in <span class="stateName">{{spanState}}</span>: </legend>
             <canvas id="pie" class="chart chart-pie"
                     chart-data="pie1.data" chart-labels="pie1.labels">
             </canvas>

@@ -38,6 +38,9 @@ nav img {
   width: 50%;
   margin: auto;
 }
+.margin-top{
+  margin-top: 5%;
+}
 footer{
   display: block;
   height: 5vh;

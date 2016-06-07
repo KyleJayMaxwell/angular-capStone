@@ -2,6 +2,7 @@
      .module('currentAmerica')
      .controller('MyCtrl', ['$scope', 'energyDataService',
  function($scope, ngAnimate, energyDataService) {
+    $scope.spanState = "Colorado";
 
      $scope.showFilters = false;
 
@@ -88,6 +89,7 @@
      // function submit (param1, param2, param3) {}
 
      $scope.updateActiveGeography = function(geography) {
+        $scope.spanState = geography.properties.name;
          $scope.stateName = geography.properties.name;
          $scope.stateCode = geography.properties.stateNum;
          console.log($scope.stateCode);
