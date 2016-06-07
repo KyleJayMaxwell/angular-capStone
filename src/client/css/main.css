@@ -5,9 +5,6 @@
 .white{
   color: white;
 }
-.customFill {
-  fill: black;
-}
 .shadow{
   text-shadow: 1px 1px #000000;
 }
@@ -48,13 +45,12 @@ footer{
 }
 footer p{
   font-size: 18px;
-  float: right;
   margin: 0;
 }
 footer img{
+  float: right;
   height: 5vh;
 }
-
 /* animation */
 .animate-show {
   line-height: 20px;
@@ -64,7 +60,7 @@ footer img{
 }
 
 .animate-show.ng-hide-add, .animate-show.ng-hide-remove {
-  transition: all linear 0.5s;
+  transition: all linear 1s;
 }
 
 .animate-show.ng-hide {
