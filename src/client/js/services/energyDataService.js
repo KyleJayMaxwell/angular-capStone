@@ -7,7 +7,7 @@ energyDataService.$inject = ['crudService'];
 
 
 function energyDataService (crudService) {
-    var url='http://localhost:3000/year/state/'
+    var url='currentamerica.herokuapp.com/year/state/'
     return {
         getAllYears: function () {
             return crudService.getAll(url)
