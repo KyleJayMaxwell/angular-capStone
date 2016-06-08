@@ -6,21 +6,16 @@
 
 
     $scope.stateArr = [];
-    $scope.spanState = "Colorado";
     $scope.showFilters = false;
-
-
-    $scope.spanState1 = "Colorado";
-    $scope.spanState2 = "Utah";
-    $scope.spanYear1 = "1999";
-    $scope.spanYear2 = "1990";
-
-
-    $scope.showFilters = false;
-
-
     $scope.compareYears = false;
     $scope.compareStates = false;
+    $scope.showLegends = false;
+
+    $scope.spanState1 = "";
+    $scope.spanState2 = "";
+    $scope.spanYear1 = "";
+    $scope.spanYear2 = "";
+
     $scope.toggleStates = function() {
         if($scope.compareYears = true){
             $scope.compareYears = false;
@@ -106,10 +101,19 @@
 
     $scope.submit = function () {
         if ($scope.compareStates && $scope.data.yearSelect1 && $scope.stateArr[0].stateNum && $scope.stateArr[1].stateNum) {
-            bothChartsStates($scope.data.yearSelect1, $scope.stateArr)
-          console.log('comparestatesWorks')
+            $scope.showLegends = true;
+            for(i = 0; i < $scope.years.length; i++){
+                if(i == $scope.data.yearSelect1){
+                    $scope.spanYear1 = $scope.years[i].year;
+                    $scope.spanYear2 = $scope.years[i].year;
+                }
+            }
+            $scope.spanState1 = $scope.stateArr[0].name;
+            $scope.spanState2 = $scope.stateArr[1].name;
+            bothChartsStates($scope.data.yearSelect1, $scope.stateArr);
         }
         if ($scope.compareYears && $scope.data.yearSelect1 && $scope.data.yearSelect2 && $scope.stateCode) {
+            $scope.showLegends = true;
             for(i = 0; i < $scope.years.length; i++){
                 if(i == $scope.data.yearSelect1){
                     $scope.spanYear1 = $scope.years[i].year;
@@ -118,6 +122,8 @@
                     $scope.spanYear2 = $scope.years[i].year;
                 }
             }
+            $scope.spanState1 = $scope.stateName;
+            $scope.spanState2 = $scope.stateName;
             bothChartsYears($scope.data.yearSelect1, $scope.data.yearSelect2, $scope.stateCode);
             console.log('compareYersWorks', $scope.data.yearSelect1 + $scope.data.yearSelect2 + $scope.stateCode  )
         }

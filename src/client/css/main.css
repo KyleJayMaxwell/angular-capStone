@@ -32,7 +32,7 @@ nav img {
 }
 .flexbox {
   display: flex;
-  height: 85vh;
+  height: 60vh;
 }
 .box{
   width: 50%;
