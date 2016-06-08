@@ -5,10 +5,10 @@
 
 
 
-    $scope.spanState = "Colorado";
     $scope.spanState1 = "Colorado";
-    $scope.spanYear = "1999";
-    $scope.spanYear1 = "1990";
+    $scope.spanState2 = "Utah";
+    $scope.spanYear1 = "1999";
+    $scope.spanYear2 = "1990";
 
 
     $scope.showFilters = false;
@@ -106,12 +106,20 @@
 
      $scope.submit = function () {
       if ($scope.compareStates && $scope.data.yearSelect1 && $scope.data.stateSelectA && $scope.data.stateSelectB) {
-          bothChartsStates($scope.data.yearSelect1, $scope.data.stateSelectA, $scope.data.stateSelectB)
-          console.log('comparestatesWorks')
+            bothChartsStates($scope.data.yearSelect1, $scope.data.stateSelectA, $scope.data.stateSelectB)
+            console.log('comparestatesWorks')
         }
         if ($scope.compareYears && $scope.data.yearSelect1 && $scope.data.yearSelect2 && $scope.stateCode) {
-          bothChartsYears($scope.data.yearSelect1, $scope.data.yearSelect2, $scope.stateCode)
-           console.log('compareYersWorks', $scope.data.yearSelect1 + $scope.data.yearSelect2 + $scope.stateCode  )
+            for(i = 0; i < $scope.years.length; i++){
+                if(i == $scope.data.yearSelect1){
+                    $scope.spanYear1 = $scope.years[i].year;
+                }
+                if(i == $scope.data.yearSelect2){
+                    $scope.spanYear2 = $scope.years[i].year;
+                }
+            }
+            bothChartsYears($scope.data.yearSelect1, $scope.data.yearSelect2, $scope.stateCode)
+            console.log('compareYersWorks', $scope.data.yearSelect1 + $scope.data.yearSelect2 + $scope.stateCode  )
         }
 
     }
@@ -137,9 +145,6 @@
          $scope.stateName = geography.properties.name;
          $scope.stateCode = geography.properties.stateNum;
          console.log($scope.stateName);
-         if($scope.stateName !== $scope.spanState){
-            $scope.spanState = $scope.stateName;
-         }
          // $scope.$apply();
      };
 
