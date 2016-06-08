@@ -4,9 +4,21 @@
  function($scope,  energyDataService, ngAnimate) {
 
 
+
     $scope.stateArr = [];
     $scope.spanState = "Colorado";
     $scope.showFilters = false;
+
+
+    $scope.spanState1 = "Colorado";
+    $scope.spanState2 = "Utah";
+    $scope.spanYear1 = "1999";
+    $scope.spanYear2 = "1990";
+
+
+    $scope.showFilters = false;
+
+
     $scope.compareYears = false;
     $scope.compareStates = false;
     $scope.toggleStates = function() {
@@ -91,14 +103,21 @@
         $scope.pie2 = setValues(year2, state);
     }
 
-    $scope.submit = function () {
 
+    $scope.submit = function () {
         if ($scope.compareStates && $scope.data.yearSelect1 && $scope.stateArr[0].stateNum && $scope.stateArr[1].stateNum) {
             bothChartsStates($scope.data.yearSelect1, $scope.stateArr)
           console.log('comparestatesWorks')
         }
-
         if ($scope.compareYears && $scope.data.yearSelect1 && $scope.data.yearSelect2 && $scope.stateCode) {
+            for(i = 0; i < $scope.years.length; i++){
+                if(i == $scope.data.yearSelect1){
+                    $scope.spanYear1 = $scope.years[i].year;
+                }
+                if(i == $scope.data.yearSelect2){
+                    $scope.spanYear2 = $scope.years[i].year;
+                }
+            }
             bothChartsYears($scope.data.yearSelect1, $scope.data.yearSelect2, $scope.stateCode);
             console.log('compareYersWorks', $scope.data.yearSelect1 + $scope.data.yearSelect2 + $scope.stateCode  )
         }
@@ -121,13 +140,11 @@
 
      // function submit (param1, param2, param3) {}
 
-    $scope.updateActiveGeography = function(geography) {
 
-        $scope.spanState = geography.properties.name;
-        $scope.stateName = geography.properties.name;
-        $scope.stateCode = geography.properties.stateNum;
-
-        setStateArray(geography);
+     $scope.updateActiveGeography = function(geography) {
+         $scope.stateName = geography.properties.name;
+         $scope.stateCode = geography.properties.stateNum;
+         setStateArray(geography);
     };
 
 
@@ -135,7 +152,6 @@
         if ($scope.stateArr.length < 2) {
             $scope.stateArr.push(geography.properties)
             console.log('push', $scope.stateArr[0].stateNum)
-
         } else {
                 if ($scope.stateArr[0].name === geography.properties.name) {
                     $scope.stateArr.splice(0,1)

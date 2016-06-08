@@ -18,6 +18,10 @@
 
 
     <div class="container" ng-controller='MyCtrl'>
+<<<<<<< HEAD
+=======
+
+>>>>>>> f82406d225fbfea96bb2e4bdfaee9fadbd2f55f5
         <div class="row animate-show" ng-hide="showFilters">
           <div class="twelve columns center landing">
             <div class="box">
@@ -85,14 +89,14 @@
 
         <div class="row margin-top">
           <div class="one-half column" >
-            <legend>Energy Production in <span class="stateName">{{spanState}}</span>: </legend>
+            <legend>Energy Generation of {{spanState1}} in {{spanYear1}}: </legend>
             <canvas id="pie" class="chart chart-pie"
                     chart-data="pie1.data" chart-labels="pie1.labels">
             </canvas>
           </div>
           <div class="one-half column" >
             <div class="pie2 center" id="pie2">
-              <legend>Energy Production in <span class="stateName">Colorado</span>: </legend>
+              <legend>Energy Generation of {{spanState2}} in {{spanYear2}}: </legend>
               <canvas id="pie" class="chart chart-pie"
                     chart-data="pie2.data" chart-labels="pie2.labels">
             </canvas>
