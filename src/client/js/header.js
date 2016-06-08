@@ -11,7 +11,7 @@
       // element = E
       restrict: 'E',
       // where it's looking when returning footer
-      templateUrl: 'client/partials/header.html'  
+      templateUrl: 'partials/header.html'  
     };
   }
 })();
