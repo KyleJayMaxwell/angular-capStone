@@ -41,6 +41,10 @@ nav img {
 .margin-top{
   margin-top: 5%;
 }
+a{
+  color:#00CCFF;
+  text-decoration: none;
+}
 footer{
   display: block;
   height: 5vh;

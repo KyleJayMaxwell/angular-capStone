@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="css/skeleton.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/pieChart.css">
-
-    </head>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.css">
+  </head>
   <body>
     <!-- sample angular code -->
 
@@ -82,14 +82,16 @@
           <div class="one-half column center">
             <h5 ng-show="showLegends">Energy Generation of {{spanState1}} in {{spanYear1}}: </h5>
             <canvas id="pie" class="chart chart-pie"
-                    chart-data="pie1.data" chart-labels="pie1.labels">
+                    chart-data="pie1.data" chart-labels="pie1.labels" chart-legend="true"
+>
             </canvas>
           </div>
           <div class="one-half column center">
             <div class="pie2 center" id="pie2">
               <h5 ng-show="showLegends">Energy Generation of {{spanState2}} in {{spanYear2}}: </h5>
               <canvas id="pie" class="chart chart-pie"
-                    chart-data="pie2.data" chart-labels="pie2.labels">
+                    chart-data="pie2.data" chart-labels="pie2.labels" chart-legend="true"
+>
             </canvas>
 
             </div>
