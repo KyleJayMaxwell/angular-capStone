@@ -4,9 +4,9 @@ var mongoose = require('mongoose-q')(require('mongoose'));
 var Year = require('../models/years.js');
 var State = require('../models/states.js');
 
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
+router.get('/', function(req, res, next) {
+  res.sendFile("index.html");
+});
 
 
 router.post('/years', function(req, res, next) {

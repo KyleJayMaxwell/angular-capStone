@@ -125,7 +125,6 @@
             $scope.spanState1 = $scope.stateName;
             $scope.spanState2 = $scope.stateName;
             bothChartsYears($scope.data.yearSelect1, $scope.data.yearSelect2, $scope.stateCode);
-            console.log('compareYersWorks', $scope.data.yearSelect1 + $scope.data.yearSelect2 + $scope.stateCode  )
         }
     }
 
@@ -157,19 +156,15 @@
     function setStateArray (geography) {
         if ($scope.stateArr.length < 2) {
             $scope.stateArr.push(geography.properties)
-            console.log('push', $scope.stateArr[0].stateNum)
         } else {
                 if ($scope.stateArr[0].name === geography.properties.name) {
                     $scope.stateArr.splice(0,1)
-                    console.log('Replaced position 1', $scope.stateArr)
                 }
                 if ($scope.stateArr[1].name === geography.properties.name) {
                     $scope.stateArr.splice(1,1)
-                    console.log('Replaced position 2', $scope.stateArr)
                 }
                 if ($scope.stateArr.length > 1) {
                     $scope.stateArr.splice(1,1, geography.properties)
-                    console.log('Replaced position 2 due to length', $scope.stateArr)
                 }
             }
 

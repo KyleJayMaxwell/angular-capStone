@@ -1,5 +1,5 @@
 var mongoose = require('mongoose-q')(require('mongoose'));
-mongoose.connect('mongodb://localhost/kyle_test');
+mongoose.connect(process.env.MONGODB_URI);
 
 var Year = require('../models/years.js');
 

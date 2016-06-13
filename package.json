@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "",
   "main": "gulpfile.js",
+  "scripts": {
+    "start": "node ./src/server/bin/www"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -31,5 +34,13 @@
     "router": "^1.1.4",
     "serve-favicon": "^2.3.0",
     "swig": "^1.4.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KyleJayMaxwell/angular-capStone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KyleJayMaxwell/angular-capStone/issues"
+  },
+  "homepage": "https://github.com/KyleJayMaxwell/angular-capStone#readme"
 }
