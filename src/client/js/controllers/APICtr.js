@@ -6,6 +6,8 @@ MyCtrl.$inject = ['$scope', 'energyDataService', 'ngAnimate'];
 
 function MyCtrl ($scope,  energyDataService, ngAnimate) {
 
+
+//global variables
   $scope.stateArr = [];
   $scope.showFilters = false;
   $scope.compareYears = false;
@@ -43,11 +45,17 @@ function MyCtrl ($scope,  energyDataService, ngAnimate) {
     {'value': 24, 'year': 2014}
   ];
 
-  $scope.toggleStates = function() {
+  //Helper functions
+  $scope.toggleStates = toggleStates;
+  $scope.toggleYears = toggleYears;
+  $scope.submit = submit;
+  $scope.updateActiveGeography = updateActiveGeography;
+
+  function toggleStates() {
     $scope.compareYears = false;
     $scope.compareStates = !$scope.compareStates;
   }
-  $scope.toggleYears = function() {
+  function toggleYears () {
     $scope.compareStates = false;
     $scope.compareYears = !$scope.compareYears;
   }
@@ -59,7 +67,7 @@ function MyCtrl ($scope,  energyDataService, ngAnimate) {
       })
   })();
 
-   function parseData (data, yearID, stateID) {
+  function parseData (data, yearID, stateID) {
       $scope.parsed = data[yearID].state[stateID].producer[0]['Total Electric Power Industry'];
    }
 
@@ -117,7 +125,7 @@ function MyCtrl ($scope,  energyDataService, ngAnimate) {
     }
   }
 
-  $scope.submit = function () {
+   function submit () {
     if ($scope.compareStates && $scope.data.yearSelect1 && $scope.stateArr[0].stateNum && $scope.stateArr[1].stateNum) {
         submitStates();
     }
@@ -138,7 +146,7 @@ function MyCtrl ($scope,  energyDataService, ngAnimate) {
     responsive: true,
   };
 
-  $scope.updateActiveGeography = function(geography) {
+  function updateActiveGeography (geography) {
     $scope.stateName = geography.properties.name;
     $scope.stateCode = geography.properties.stateNum;
     setStateArray(geography);
@@ -160,6 +168,9 @@ function MyCtrl ($scope,  energyDataService, ngAnimate) {
       }
     }
   }
+//controller function
+//instantianed variaable
+//instantiate scope functions at top and then assign them helper functions
+//ie at top make $scope.updateActiveGeography = updateActiveGeography
 
-
-}]);
+};
