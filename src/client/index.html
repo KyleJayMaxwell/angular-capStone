@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <title>Current America</title>
 
+
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/skeleton.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/pieChart.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.css">
   </head>
+
   <body>
     <!-- sample angular code -->
 
@@ -90,10 +92,8 @@
             <div class="pie2 center" id="pie2">
               <h5 ng-show="showLegends">Energy Generation of {{spanState2}} in {{spanYear2}}: </h5>
               <canvas id="pie" class="chart chart-pie"
-                    chart-data="pie2.data" chart-labels="pie2.labels" chart-legend="true"
->
-            </canvas>
-
+              chart-data="pie2.data" chart-labels="pie2.labels" chart-legend="true">
+              </canvas>
             </div>
           </div>
         </div>

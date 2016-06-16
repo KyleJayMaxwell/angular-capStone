@@ -58,12 +58,13 @@ function seedStates (data){
           .findOne({ yearNum: nowYear}, (err, data) => {
             if (err) {console.log('Could not find year: ' + nowYear)
           } else {
-              var update = { $push: {state : newState}};
-              var options = {new: true};
-              var id = data._id;
-              Year
-              .findByIdAndUpdate(id, update, (err, updatedYear) =>{
-                if (err){ console.log('error adding state to year')
+            var update = { $push: {state : newState}};
+            var options = {new: true};
+            var id = data._id;
+            Year
+            .findByIdAndUpdate(id, update, (err, updatedYear) =>{
+              if (err){
+                console.log('error adding state to year')
               } else { console.log(updatedYear) }
             })
           }
